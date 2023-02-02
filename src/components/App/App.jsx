@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-
+import Feeling from '../Feeling/Feeling';
 function App() {
 
   return (
