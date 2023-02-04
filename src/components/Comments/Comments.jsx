@@ -1,14 +1,16 @@
-
 import axios from 'axios';
 import React from 'react';
-
-function comments() {
+import { useHistory } from 'react-router-dom'; // history import
+import { useState } from 'react';
+function Comments() {
 	const [comments, setComments] = useState('');
+	const history = useHistory(); // useHistory
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log('comments', comments);
 		axios.post('/comments', { comments });
+		history.push('./Review');
 	};
 	return (
 		<div>
@@ -27,4 +29,4 @@ function comments() {
 	);
 }
 
-export default Feeling;
+export default Comments;

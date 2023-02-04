@@ -1,14 +1,17 @@
 
 import axios from 'axios';
 import React from 'react';
+import { useHistory } from 'react-router-dom'; // history import
+import { useState } from 'react';
 
-function supported () {
+function Supported () {
 	const [supported, setSupported] = useState('');
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log('supported', supported);
 		axios.post('/supported', { supported });
+		history.push('./Comments')
 	};
 	return (
 		<div>

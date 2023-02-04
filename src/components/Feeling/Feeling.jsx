@@ -2,14 +2,18 @@
 
 import axios from 'axios';
 import React from 'react';
+import { useHistory } from 'react-router-dom'; // history import
+import { useState } from 'react';
 
-function feeling() {
+function Feeling() {
 	const [feeling, setFeeling] = useState('');
+    const history = useHistory(); // useHistory
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log('feeling', feeling);
 		axios.post('/feeling', { feeling });
+		history.push('./Understanding')
 	};
 	return (
 		<div>

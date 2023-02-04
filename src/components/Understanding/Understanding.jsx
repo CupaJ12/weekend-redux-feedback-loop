@@ -2,14 +2,18 @@
 
 import React from 'react';
 import axios from 'axios';
-
-function understanding() {
+import { useHistory } from 'react-router-dom'; // history import
+import { useState } from 'react';
+function Understanding() {
 	const [understanding, setUnderstanding] = useState('');
+
+    const history = useHistory(); // useHistory
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log('understanding', understanding);
 		axios.post('/understanding', { understanding });
+        history.push('./Supported')
 	};
 	return (
 		<div>
@@ -22,7 +26,8 @@ function understanding() {
 						onChange={(e) => setUnderstanding(e.target.value)}
 					/>
 				</label>
-				<button onClick={handleSubmit}>NEXT</button>
+				<button onClick={handleSubmit}
+                >NEXT</button>
 			</form>
 		</div>
 	);
