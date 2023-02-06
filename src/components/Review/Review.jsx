@@ -34,14 +34,13 @@ function Review() {
 				console.log('err', err);
 				alert('Something went wrong. Please try again.');
 			});
-					console.log('comments', Feedback);
-
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		// axios.post('/comments', { Feedback });
 		bundleAndSend();
+		history.push('./SuccessPage');
 	};
 
 	return (

@@ -17,6 +17,9 @@ const feelingReducer = (state = '', action) => {
 	if (action.type === 'SET_FEELING') {
 		return state + action.payload;
 	}
+	if (action.type === 'CLEAR_INPUTS') {
+		return state = '';
+	}
 	return state;
 };
 // understanding reducer
@@ -26,6 +29,9 @@ const understandingReducer = (state = '', action) => {
 
 	if (action.type === 'SET_UNDERSTANDING') {
 		return state + action.payload;
+	}
+	if (action.type === 'CLEAR_INPUTS') {
+		return state = '';
 	}
 	return state;
 };
@@ -37,6 +43,9 @@ const supportedReducer = (state = '', action) => {
 	if (action.type === 'SET_SUPPORTED') {
 		return state + action.payload;
 	}
+	if (action.type === 'CLEAR_INPUTS') {
+		return state = '';
+	}
 	return state;
 };
 // comments reducer
@@ -46,6 +55,9 @@ const commentsReducer = (state = '', action) => {
 
 	if (action.type === 'SET_COMMENTS') {
 		return state + action.payload;
+	}
+	if (action.type === 'CLEAR_INPUTS') {
+		return state = '';
 	}
 	return state;
 };

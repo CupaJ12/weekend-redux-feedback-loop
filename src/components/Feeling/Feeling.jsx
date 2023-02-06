@@ -21,6 +21,10 @@ function Feeling() {
 		e.preventDefault();
 		console.log('feeling', feeling);
 		// axios.post('/feeling', { feeling });
+		if (feeling === '') {
+			alert('input required');
+			return;
+		}
 		history.push('./Understanding')
 		handleChange();
 	};
@@ -30,14 +34,16 @@ function Feeling() {
 				<label>
 					How are you feeling?
 					<input
-						type='text'
+						type='number'
 						value={feeling}
-						
-						onChange={(e) => setFeeling(e.target.value) }
+						required='required'
+						placeholder='1-5, 1 is worst and 5 is best'
+						onChange={(e) => setFeeling(e.target.value)}
 					/>
 				</label>
 				<button onClick={handleSubmit}>NEXT</button>
 			</form>
+			<h6>input required</h6>
 		</div>
 	);
 }

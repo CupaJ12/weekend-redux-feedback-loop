@@ -7,6 +7,8 @@ import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import SuccessPage from '../SuccessPage/SuccessPage';
+
 
 function App() {
 	return (
@@ -32,6 +34,9 @@ function App() {
 					</Route>
 					<Route path='/Review' exact>
 						<Review />
+					</Route>
+					<Route path='/SuccessPage' exact>
+						<SuccessPage />
 					</Route>
 				</div>
 			</Router>

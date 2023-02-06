@@ -19,6 +19,10 @@ function Understanding() {
 		e.preventDefault();
 		console.log('understanding', understanding);
 		// axios.post('/understanding', { understanding });
+		if (understanding === '') {
+			alert('input required');
+			return;
+		}
 		history.push('./Supported');
 		handleChange();
 	};
@@ -30,11 +34,14 @@ function Understanding() {
 					<input
 						type='text'
 						value={understanding}
+						required
+						placeholder='1-5, 1 is worst and 5 is best'
 						onChange={(e) => setUnderstanding(e.target.value)}
 					/>
 				</label>
 				<button onClick={handleSubmit}>NEXT</button>
 			</form>
+			<h6>input required</h6>
 		</div>
 	);
 }

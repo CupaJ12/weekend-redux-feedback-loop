@@ -15,6 +15,10 @@ function Supported() {
 		e.preventDefault();
 		console.log('supported', supported);
 		// axios.post('/supported', { supported });
+		if (Supported === '') {
+			alert('input required');
+			return;
+		}
 		history.push('./Comments');
 		handleChange();
 	};
@@ -26,11 +30,14 @@ function Supported() {
 					<input
 						type='text'
 						value={supported}
+						required
+						placeholder='1-5, 1 is worst and 5 is best'
 						onChange={(e) => setSupported(e.target.value)}
 					/>
 				</label>
 				<button onClick={handleSubmit}>NEXT</button>
 			</form>
+			<h6>input required</h6>
 		</div>
 	);
 }
