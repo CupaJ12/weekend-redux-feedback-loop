@@ -6,21 +6,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
-
+// import {Store } from 'redux';
 // reducers below
-const feeling = (state = '', action) => {
-	console.log('feeling reducer reducer:', state);
-	console.log('feeling reducer action:', action);
-	console.log('feeling reducer action:', action.payload);
+
+// feeling reducer
+const feelingReducer = (state = '', action) => {
+	// console.log('feeling reducer reducer:', state);
+	// console.log('feeling reducer action:', action);
+	// console.log('feeling reducer action:', action.payload);
 	if (action.type === 'SET_FEELING') {
 		return state + action.payload;
 	}
 	return state;
 };
 // understanding reducer
-const understanding = (state = '', action) => {
-	console.log('understanding reducer reducer:', state);
-	console.log('understanding reducer action:', action);
+const understandingReducer = (state = '', action) => {
+	// console.log('understanding reducer reducer:', state);
+	// console.log('understanding reducer action:', action);
 
 	if (action.type === 'SET_UNDERSTANDING') {
 		return state + action.payload;
@@ -28,19 +30,19 @@ const understanding = (state = '', action) => {
 	return state;
 };
 // support reducer
-const support = (state = '', action) => {
-	console.log('support reducer reducer:', state);
-	console.log('support reducer action:', action);
+const supportedReducer = (state = '', action) => {
+	// console.log('support reducer reducer:', state);
+	// console.log('support reducer action:', action);
 
-	if (action.type === 'SET_SUPPORT') {
+	if (action.type === 'SET_SUPPORTED') {
 		return state + action.payload;
 	}
 	return state;
 };
 // comments reducer
-const comments = (state = '', action) => {
-	console.log('comments reducer reducer:', state);
-	console.log('comments reducer action:', action);
+const commentsReducer = (state = '', action) => {
+	// console.log('comments reducer reducer:', state);
+	// console.log('comments reducer action:', action);
 
 	if (action.type === 'SET_COMMENTS') {
 		return state + action.payload;
@@ -52,10 +54,10 @@ const comments = (state = '', action) => {
 const storeInstance = createStore(
 	// reducers,
 	combineReducers({
-		feeling,
-        understanding,
-        support,
-        comments
+		feelingReducer,
+        understandingReducer,
+        supportedReducer,
+        commentsReducer
 	}),
 	applyMiddleware(logger)
 );
@@ -67,7 +69,14 @@ const storeInstance = createStore(
     <App />
     </Provider>, */
 }
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+// ReactDOM.render(<App />, document.getElementById('root'));
+// registerServiceWorker();
+
+ReactDOM.render(
+	<Provider store={storeInstance}>
+	  <App />
+	</Provider>,
+	document.getElementById("root")
+  );
 
 export { storeInstance };
