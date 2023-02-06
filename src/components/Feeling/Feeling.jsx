@@ -9,13 +9,13 @@ import { useDispatch, useSelector } from 'react-redux';
 function Feeling() {
 	// declarations of const
 	const [feeling, setFeeling] = useState('');
-    const history = useHistory(); // useHistory
+	const history = useHistory(); // useHistory
 	const dispatch = useDispatch();
 	const feelingReducer = useSelector((store) => store.feelingReducer);
 	// handleChange function
 	const handleChange = (e) => {
 		dispatch({ type: 'SET_FEELING', payload: feeling });
-	}
+	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -25,7 +25,7 @@ function Feeling() {
 			alert('input required');
 			return;
 		}
-		history.push('./Understanding')
+		history.push('./Understanding');
 		handleChange();
 	};
 	return (

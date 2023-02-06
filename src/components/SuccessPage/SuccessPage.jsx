@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import Feeling from '../Feeling/Feeling';
 
-function SuccessPage () {
+function SuccessPage() {
 	// reset reducer states
 	const dispatch = useDispatch();
 
@@ -21,6 +21,6 @@ function SuccessPage () {
 			<button onClick={handleClick}>Leave New Feedback</button>
 		</div>
 	);
-};
+}
 
 export default SuccessPage;

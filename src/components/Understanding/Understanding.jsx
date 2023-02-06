@@ -14,7 +14,7 @@ function Understanding() {
 	);
 	const handleChange = (e) => {
 		dispatch({ type: 'SET_UNDERSTANDING', payload: understanding });
-	}
+	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log('understanding', understanding);

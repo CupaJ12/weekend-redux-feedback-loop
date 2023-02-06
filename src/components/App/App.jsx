@@ -9,7 +9,6 @@ import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import SuccessPage from '../SuccessPage/SuccessPage';
 
-
 function App() {
 	return (
 		<div className='App'>

@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { Provider } from "react-redux";
-import logger from "redux-logger";
+import { Provider } from 'react-redux';
+import logger from 'redux-logger';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -18,7 +18,7 @@ const feelingReducer = (state = '', action) => {
 		return state + action.payload;
 	}
 	if (action.type === 'CLEAR_INPUTS') {
-		return state = '';
+		return (state = '');
 	}
 	return state;
 };
@@ -31,7 +31,7 @@ const understandingReducer = (state = '', action) => {
 		return state + action.payload;
 	}
 	if (action.type === 'CLEAR_INPUTS') {
-		return state = '';
+		return (state = '');
 	}
 	return state;
 };
@@ -44,7 +44,7 @@ const supportedReducer = (state = '', action) => {
 		return state + action.payload;
 	}
 	if (action.type === 'CLEAR_INPUTS') {
-		return state = '';
+		return (state = '');
 	}
 	return state;
 };
@@ -57,7 +57,7 @@ const commentsReducer = (state = '', action) => {
 		return state + action.payload;
 	}
 	if (action.type === 'CLEAR_INPUTS') {
-		return state = '';
+		return (state = '');
 	}
 	return state;
 };
@@ -67,9 +67,9 @@ const storeInstance = createStore(
 	// reducers,
 	combineReducers({
 		feelingReducer,
-        understandingReducer,
-        supportedReducer,
-        commentsReducer
+		understandingReducer,
+		supportedReducer,
+		commentsReducer,
 	}),
 	applyMiddleware(logger)
 );
@@ -86,9 +86,9 @@ const storeInstance = createStore(
 
 ReactDOM.render(
 	<Provider store={storeInstance}>
-	  <App />
+		<App />
 	</Provider>,
-	document.getElementById("root")
-  );
+	document.getElementById('root')
+);
 
 export { storeInstance };
